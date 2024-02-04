@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title> Hi Ami!</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="icon" type = "image/x-icon" href = ""
+        <style>
+            div.image{
+                position:absolute;
+                top: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+            p.Valentine{
+                font-size: 25px;
+                font-family: "Poppins";
+            }
+            div.buttons{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 40%;
+            }
+            button{
+                padding: auto;
+                margin: auto;
+                border-style:none;
+                font-size: 25px;
+                font-family: "Poppins";
+                border-radius: 10px;
+            }
+            button.yes{
+                background-color: #65B741;
+                width: 120px;
+                height: 55px;
+            }
+            button.no{
+                background-color: #F96666;
+                width: 120px;
+                height: 55px;
+            }
+            button.no:hover{
+                background-color:#c75353;
+                transition: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "image">
+            <iframe id ="image" src="https://giphy.com/embed/qUIm5wu6LAAog" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p id ="valentine" class = "Valentine"> Will you be my valentine?</p> 
+        </div>
+        <div class = "buttons">
+            <button type="button" class="yes" id="yes" onclick = "yesfunction()">Yes</button>
+            <button type="button" class="no" id="no" onclick="nofunction()">No</button>
+        </div>
+        <script>
+            function nofunction(){
+                let yesBTN = document.getElementById("yes");
+                yesBTN.style.width = (yesBTN.offsetWidth + 20) + "px";
+                yesBTN.style.height = (yesBTN.offsetHeight + 15) + "px";
+                var style = window.getComputedStyle(yesBTN).fontSize;
+                var fontsize = parseFloat(style);
+                yesBTN.style.fontSize = (fontsize + 5) + "px";
+                document.getElementById("image").src = "https://giphy.com/embed/3o6wrvdHFbwBrUFenu";
+                let text = document.getElementById("valentine").innerHTML = "AWWWWW";
+                var btnHt = yesBTN.offsetHeight;
+                var btnWt = yesBTN.offsetWidth;
+                if(btnHt == 205 && btnWt == 320) {
+                    document.getElementById("no").style.display = "none";
+                };
+            };
+            function yesfunction(){
+                let image = document.getElementById("image");
+                image.src = "https://giphy.com/embed/3oz8xRF0v9WMAUVLNK";
+                let text = document.getElementById("valentine");
+                text.innerHTML = "YEHEY";
+            }
+        </script>
+    </body>
+</html>
